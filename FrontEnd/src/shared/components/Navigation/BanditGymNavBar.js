@@ -1,19 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { Navbar, Nav, NavDropdown } from "react-bootstrap";
 import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  useParams,
-} from "react-router-dom";
-import {
-  Navbar,
-  Nav,
-  NavDropdown,
-  Form,
-  FormControl,
-  Button,
-} from "react-bootstrap";
-import { Twitter, Facebook, YouTube, Instagram } from "@material-ui/icons";
+  Twitter,
+  Facebook,
+  YouTube,
+  Instagram,
+  ShoppingCart,
+} from "@material-ui/icons";
 
 import "./BanditGymNavBar.css";
 
@@ -63,17 +57,20 @@ class BanditGymNavBar extends React.Component {
                     </NavDropdown>
                   </Nav>
                   <Nav className="mr-right">
-                    <Nav.Link>
-                      <Facebook />
+                    <Nav.Link href="/">
+                      <ShoppingCart fontSize="large" />
                     </Nav.Link>
                     <Nav.Link>
-                      <Twitter />
+                      <Facebook fontSize="large" />
                     </Nav.Link>
                     <Nav.Link>
-                      <Instagram />
+                      <Twitter fontSize="large" />
                     </Nav.Link>
                     <Nav.Link>
-                      <YouTube />
+                      <Instagram fontSize="large" />
+                    </Nav.Link>
+                    <Nav.Link>
+                      <YouTube fontSize="large" />
                     </Nav.Link>
                   </Nav>
                 </Navbar.Collapse>
