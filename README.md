@@ -1,6 +1,6 @@
 # Bandit Gym SPA
 
-This is the official Bandit Gym SPA.
+This is the official Bandit Gym SPA.  
 [![shieldio made-with](https://img.shields.io/badge/Hours_Log-19%20Hours-black)]()
 
 ## Skills & Tools Used:
