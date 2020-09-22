@@ -39,7 +39,7 @@ class BanditGymNavBar extends React.Component {
                     <Nav.Link href="/">Home</Nav.Link>
                     <Nav.Link href="/">Contact Us</Nav.Link>
                     <Nav.Link href="/">Shop</Nav.Link>
-                    <Nav.Link href="/">Profile</Nav.Link>
+                    <Nav.Link href="/">My Profile</Nav.Link>
                     <NavDropdown title="Community" id="basic-nav-dropdown">
                       <NavDropdown.Item href="#action/3.1">
                         Community Home
@@ -58,19 +58,19 @@ class BanditGymNavBar extends React.Component {
                   </Nav>
                   <Nav className="mr-right">
                     <Nav.Link href="/">
-                      <ShoppingCart fontSize="large" />
+                      Cart <ShoppingCart />
                     </Nav.Link>
                     <Nav.Link>
-                      <Facebook fontSize="large" />
+                      <Facebook />
                     </Nav.Link>
                     <Nav.Link>
-                      <Twitter fontSize="large" />
+                      <Twitter />
                     </Nav.Link>
                     <Nav.Link>
-                      <Instagram fontSize="large" />
+                      <Instagram />
                     </Nav.Link>
                     <Nav.Link>
-                      <YouTube fontSize="large" />
+                      <YouTube />
                     </Nav.Link>
                   </Nav>
                 </Navbar.Collapse>
