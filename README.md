@@ -17,4 +17,8 @@ This is the official Bandit Gym SPA.
 
 ## Setup:
 
-CD into banditgymspa and run `npm start` and nagivate to `localhost:3000`.
+CD into banditgymspa and run `npm install` then `npm start` and nagivate to `localhost:3000`.
+
+# Documentation
+
+it is well documented at [here](http://docs.g-axon.work/jumbo-react/ "Documentation") .
