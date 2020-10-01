@@ -8,7 +8,10 @@ import {
   twitterAuthProvider,
 } from "../firebase/firebase";
 
-import { CREATE_NEW_USER_DOC } from "../firebase/firebaseData";
+import {
+  CREATE_NEW_USER_DOC,
+  FETCH_LOGINED_USER_DATA,
+} from "../firebase/firebaseData";
 
 import {
   SIGNIN_FACEBOOK_USER,
@@ -165,6 +168,7 @@ function* signInUserWithEmailPassword({ payload }) {
     if (signInUser.message) {
       yield put(showAuthMessage(signInUser.message));
     } else {
+      FETCH_LOGINED_USER_DATA(signInUser.user.uid);
       localStorage.setItem("user_id", signInUser.user.uid);
       yield put(userSignInSuccess(signInUser.user.uid));
     }

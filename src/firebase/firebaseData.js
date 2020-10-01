@@ -151,10 +151,19 @@ const SAVE_NEW_WORKOUT = (
     .catch(console.error);
 };
 
+// LOGINED IN USER DATA CACHE
+// TODO
+
+// FETCH LOGINED USER DATA WHEN THEY LOGIN
+const FETCH_LOGINED_USER_DATA = (uid) => {
+  const [selectedDoc] = FETCH_DOC("users", uid);
+};
+
 export {
   FETCH_COLLECTION,
   FETCH_DOC,
   FETCH_SUBCOLLECTION,
   CREATE_NEW_USER_DOC,
   SAVE_NEW_WORKOUT,
+  FETCH_LOGINED_USER_DATA,
 };
