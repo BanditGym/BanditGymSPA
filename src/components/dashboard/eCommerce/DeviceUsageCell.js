@@ -18,18 +18,14 @@ const DeviceUsageCell = (props) => {
   };
 
   const {
-    userLastName,
-    deviceUsageStat,
     appPlatform,
+    banditLevel,
+    deviceUsageStat,
+    deviceName,
+    userName,
     userId,
     profileImg,
-    deviceName,
-    banditLevel,
-    userFirstName,
   } = props.data;
-
-  // const [selectedSubCol] = FETCH_SUBCOLLECTION('workoutHistory', userId,)
-  //const userWorkout = FETCH_USER_CURRENT_WORKOUT_HISTORY(userId);
 
   const statusStyle = deviceUsageStat.includes("High Usage")
     ? "text-white bg-success"
@@ -49,17 +45,11 @@ const DeviceUsageCell = (props) => {
 
   return (
     <tr tabIndex={-1} key={userId}>
-      <td>{userId}</td>
       <td>
         <div className="user-profile d-flex flex-row align-items-center">
-          <Avatar
-            alt={userFirstName}
-            src={profileImg}
-            className="user-avatar"
-          />
+          <Avatar alt={userName} src={profileImg} className="user-avatar" />
           <div className="user-detail">
-            <h5 className="user-name">{userFirstName}</h5>
-            <h5 className="user-name">{userLastName}</h5>
+            <h5 className="user-name">{userName}</h5>
           </div>
         </div>
       </td>

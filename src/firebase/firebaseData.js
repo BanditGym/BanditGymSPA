@@ -85,4 +85,76 @@ const FETCH_SUBCOLLECTION = (collection, docId, subCollection) => {
   return [selectedSubCol, isLoading, error];
 };
 
-export { FETCH_COLLECTION, FETCH_DOC, FETCH_SUBCOLLECTION };
+// CREATE EMPTY USER DOCUMENT ON INITIAL USER SETUP
+const CREATE_NEW_USER_DOC = (name, email, uid) => {
+  database
+    .collection("users")
+    .doc(uid)
+    .set({
+      appPlatform: "",
+      banditLevel: "Trainee",
+      deviceName: "",
+      deviceUsageStat: "None",
+      profileImg: "",
+      userAge: "",
+      userCurrWeight: "",
+      userGoalWeight: "",
+      userName: name,
+      userId: uid,
+      userLocation: "",
+      userSex: "",
+      userEmail: email,
+    })
+    .catch(console.error);
+
+  CREATE_NEW_WORKOUT_HISTORY(uid);
+};
+
+// CREATE EMPTY USER WORKOUT HISTORY ON INITIAL USER SETUP
+const CREATE_NEW_WORKOUT_HISTORY = (uid) => {
+  database
+    .collection("workoutHistory")
+    .doc(uid)
+    .set({
+      amountOfWorkouts: 0,
+      avgWorkoutLength: 0,
+      lastWorkoutDate: "",
+      totalTimeOfAllWorkouts: 0,
+    })
+    .catch(console.error);
+};
+
+// SAVE A NEW WORKOUT ONCE A USER IS DONE RECORDING WORKOUT
+const SAVE_NEW_WORKOUT = (
+  uid,
+  workoutLength,
+  workoutDate,
+  workoutType,
+  totalWorkoutLength,
+  { workoutMap },
+  amountOfExercises,
+  dayOfWeek
+) => {
+  // TODO: FIND OUT HOW TO DEFERENCE EVERY VALUE IN {workoutMap}
+  database
+    .collection("workoutHistory")
+    .doc(uid)
+    .collection(workoutDate)
+    .doc(workoutType)
+    .set({
+      workoutLength: workoutLength,
+      totalWorkoutLength: totalWorkoutLength,
+      amountOfExercises: amountOfExercises,
+      dayOfWeek: dayOfWeek,
+      // workoutMap
+    })
+    .catch(console.error);
+};
+
+export {
+  FETCH_COLLECTION,
+  FETCH_DOC,
+  FETCH_SUBCOLLECTION,
+  CREATE_NEW_USER_DOC,
+  SAVE_NEW_WORKOUT,
+};

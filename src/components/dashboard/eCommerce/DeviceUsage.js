@@ -19,15 +19,14 @@ const DeviceUsage = () => {
       <table className="default-table table-unbordered table table-sm table-hover">
         <thead className="th-border-b">
           <tr>
-            <th>User ID</th>
-            <th>User</th>
-            <th>Last Workout Date</th>
+            <th>User Name</th>
+            {/* <th>Last Workout Date</th>
             <th>Workout Frequency</th>
-            <th>Top Workouts</th>
+            <th>Top Workouts</th> */}
             <th>Bandit Device</th>
             <th>Platform</th>
             <th className="status-cell text-right">Device Usage</th>
-            <th>Bandit Profile Level</th>
+            <th className="status-cell text-right">Bandit Profile Level</th>
           </tr>
         </thead>
         <tbody>
